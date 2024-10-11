@@ -23,9 +23,19 @@ public class Inventory {
         for (Item item : items) {
             System.out.println(item);
         }
+        System.out.println("-------------------\n");
     }
 
     public List<Item> getItems() {
         return items;
+    }
+
+    public Item findItemByName(String name) {
+        for (Item item : items) {
+            if (item.getName().equalsIgnoreCase(name)) {
+                return item;
+            }
+        }
+        return null;
     }
 }
